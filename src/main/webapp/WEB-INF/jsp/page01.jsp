@@ -23,7 +23,7 @@
 
                // 걸리는 시간 조회 --------------
                console.time("for loop");
-               var tm=1;
+               var tm=10;
                for(let i=0;i<1000;i++) {
                     tm++;
                }
@@ -44,7 +44,7 @@
 
                // console.trace(); -------------
 
-               console.assert(1===1, "same");
+               console.assert(1===1, "same1");
                console.assert(1===2, "not same");
         </script>
     </head>
