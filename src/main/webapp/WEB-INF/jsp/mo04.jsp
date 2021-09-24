@@ -43,7 +43,7 @@
         <input type="text" value="${parTap.col1}">
 
         <table border="1">
-            <tr><td>ID</td><td>이름</td></tr>
+            <tr><td>ID</td><td>이름1</td></tr>
             <c:forEach var="item" items="${items}">
                 <tr>
                     <td> ${item.userId} </td>
