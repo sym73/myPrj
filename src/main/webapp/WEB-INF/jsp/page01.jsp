@@ -84,8 +84,22 @@
                       $("#target").empty();
                 });
 
-                $("li:eq(0)").css('background', 'black').css('color', 'white');
+                $("li:eq(0)").css('background', 'black').css("color", "red");
                 $("li").eq(2).css('background', 'black').css('color', 'white');
+
+                $("#box6").click(function() {
+                  $("li:eq(0)").css('background', 'white').css('color', 'black');
+                  $("ul li").has("span").css("color", "red");
+                  $("#txta").offset( {left:80});
+                });
+
+
+
+                var tleft = $("#txta").offset().left;
+
+                $("#li05 span").text(tleft);
+
+
 
              });
         </script>
@@ -96,7 +110,8 @@
         <input type="button" id="box2" value="북아메리카"/>
         <input type="button" id="box3" value="disable"/>
         <input type="button" id="box4" value="append"/>
-        <input type="button" id="box5" value="empty"/>
+        <input type="button" id="box5" value="empty"/><br>
+        <input type="button" id="box6" value="has"/>
         <div class="css_test">
             <input type="checkbox" value="굿펠로우 나무타기 캥거루1" />굿펠로우 나무타기 캥거루 222<br>
             <input type="checkbox" value="북아메리카 검은머리 흰죽지 "  id="chk1"/>북아메리카 검은머리 흰죽지 111<br>
@@ -111,7 +126,7 @@
             <li> 22 </li>
             <li> 333 </li>
             <li> 444 </li>
-            <li> 555 </li>
+            <li id="li05"> <span> 555 </span> </li>
         </ul>
     </body>
 
