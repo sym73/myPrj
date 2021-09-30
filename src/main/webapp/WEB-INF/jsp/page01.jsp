@@ -126,9 +126,14 @@
                 // 숫자만 밉력 가능
                 $("#keyText").keydown(function(event) {
                     console.log(event.key);
+                    //console.log($(this).val());
                     var key = event.key;
-                    if( (key >=0 && key < 10) || key == "Backspace" || key == ".") {
+                    if( (key >=0 && key < 10) || key == "Backspace" ) {
                         return true;
+                    }else if(key == ".") {
+                        //var txt=$(this).val();
+                        if( $(this).val().indexOf(".") == -1 ) return true;
+                        else event.preventDefault();;
                     }else{
                         event.preventDefault();
                     }
