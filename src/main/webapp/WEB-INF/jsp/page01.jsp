@@ -91,6 +91,7 @@
                   $("li:eq(0)").css('background', 'white').css('color', 'black');
                   $("ul li").has("span").css("color", "red");
                   $("#txta").offset( {left:80});
+                  loadFood();
                 });
 
 
@@ -99,6 +100,39 @@
 
                 $("#li05 span").text(tleft);
 
+
+                var food = [
+                    {v:"1",t:"상"},
+                    {v:"2",t:"중"},
+                    {v:"3",t:"하"}
+                ];
+
+                function loadFood() {
+                    var h = [];
+
+                    food.forEach(item => {
+                        h.push("<option value='" + item.v + "'>" + item.t + "</option>");
+                    });
+                    console.log( h.join("") );
+                    var html1= h.join("");
+                    $("#food").html(html1);
+                }
+
+                $("#food").change(function() {
+
+                   alert( $(this).val() );
+                });
+
+                // 숫자만 밉력 가능
+                $("#keyText").keydown(function(event) {
+                    console.log(event.key);
+                    var key = event.key;
+                    if( (key >=0 && key < 10) || key == "Backspace" || key == ".") {
+                        return true;
+                    }else{
+                        event.preventDefault();
+                    }
+                });
 
 
              });
@@ -128,6 +162,10 @@
             <li> 444 </li>
             <li id="li05"> <span> 555 </span> </li>
         </ul>
+
+        <select id="food"></select>
+
+        <input type="text" id="keyText" />
     </body>
 
 
